@@ -1,7 +1,7 @@
 import pandas as pd
 from urllib.request import urlretrieve
 
-class CovidCsvDataManipulator:
+class CovidDataManipulator:
     def __init__(self, covid_data_csv_url, location_data_csv_url=None):
         self.covid_data_csv_url = covid_data_csv_url
         self.location_data_csv_url = location_data_csv_url
@@ -79,7 +79,7 @@ class CovidCsvDataManipulator:
 
 if __name__ == "__main__":
     # Instantiate the class with the URL of the CSV file
-    data_manipulator = CovidCsvDataManipulator(
+    data_manipulator = CovidDataManipulator(
         "https://gist.githubusercontent.com/aakashns/f6a004fa20c84fec53262f9a8bfee775/raw/f309558b1cf5103424cef58e2ecb8704dcd4d74c/italy-covid-daywise.csv",
         "https://gist.githubusercontent.com/aakashns/8684589ef4f266116cdce023377fc9c8/raw/99ce3826b2a9d1e6d0bde7e9e559fc8b6e9ac88b/locations.csv")  
     
