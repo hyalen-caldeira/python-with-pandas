@@ -28,7 +28,6 @@ def test_describe_covid_data(data_manipulator):
     assert "min" in str(data_manipulator.covid_df.describe()), "COVID data description is incorrect"
     assert "max" in str(data_manipulator.covid_df.describe()), "COVID data description is incorrect"
 
-
 # def test_retrieve_covid_data_from_data_frame(data_manipulator):
 #     data_manipulator.retrieve_covid_data_from_data_frame()
 #     # Add assertions to check if the COVID data is retrieved correctly from the data frame

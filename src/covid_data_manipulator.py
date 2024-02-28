@@ -8,18 +8,19 @@ class CovidDataManipulator:
 
     def import_and_read_csv_file(self):
         # Download the CSV file and save it locally
-        covid_data, _ = urlretrieve(self.covid_data_csv_url, "data.csv")
+        covid_data, _ = urlretrieve(self.covid_data_csv_url, "covid_data.csv")
         location_data, _ = urlretrieve(self.location_data_csv_url, "location.csv")
         
         # Read the CSV file into a Pandas DataFrame
         self.covid_df = pd.read_csv(covid_data)
         self.location_df = pd.read_csv(location_data)
 
-    def describe_covid_data(self):
+    def describe_csv_file(self):
         print("\nView basic infomation about rows, columns & data types: " + "\n" + str(self.covid_df.info()))
         print("\nView statistical information about numeric columns: " + "\n" + str(self.covid_df.describe()))
         print("\nGet the list of column names: " + "\n" + str(self.covid_df.columns))
         print("\nGet the number of rows & columns as a tuple: " + "\n" + str(self.covid_df.shape))
+        # Do the same for the location data
 
     def retrieve_covid_data_from_data_frame(self):
         print("COVID --> ")
@@ -85,7 +86,7 @@ if __name__ == "__main__":
     
     # Call the method to import and manipulate the data
     data_manipulator.import_and_read_csv_file()
-    data_manipulator.describe_covid_data()
+    data_manipulator.describe_csv_file()
     data_manipulator.retrieve_covid_data_from_data_frame()
     data_manipulator.retrieve_location_data_from_data_frame()
     data_manipulator.analyzing_covid_data()
