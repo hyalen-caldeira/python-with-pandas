@@ -9,7 +9,7 @@ class CovidDataManipulator:
     def import_and_read_csv_file(self):
         # Download the CSV file and save it locally
         covid_data, _ = urlretrieve(self.covid_data_csv_url, "covid_data.csv")
-        location_data, _ = urlretrieve(self.location_data_csv_url, "location.csv")
+        location_data, _ = urlretrieve(self.location_data_csv_url, "location_data.csv")
         
         # Read the CSV file into a Pandas DataFrame
         self.covid_df = pd.read_csv(covid_data)

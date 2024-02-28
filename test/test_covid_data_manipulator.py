@@ -19,7 +19,7 @@ def test_import_and_read_csv_file(data_manipulator):
 
 def test_describe_covid_data(data_manipulator):
     data_manipulator.import_and_read_csv_file()
-    data_manipulator.describe_covid_data()
+    data_manipulator.describe_csv_file()
     
     # Add assertions to check if the COVID data is described correctly
     assert "max" in str(data_manipulator.covid_df.describe()), "COVID data description is incorrect"
